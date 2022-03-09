@@ -95,7 +95,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bilgilbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-mE-EhB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bilgilbl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-mE-EhB">
                                 <rect key="frame" x="98" y="122" width="238" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,27 +108,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y93-aP-ui5">
-                                <rect key="frame" x="0.0" y="403" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="666627779.17409205">
-                                    <!--2022-02-15 14:22:59 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                    <!--1970-01-01 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--2037-12-31 11:00:00 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="tr_TR"/>
-                            </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-UF-OPw">
                                 <rect key="frame" x="329" y="587" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tekrarbutton:" destination="NLj-iO-M8v" eventType="valueChanged" id="fds-am-1Zc"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUn-E3-AoX">
                                 <rect key="frame" x="329" y="626" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="bildirimbutton:" destination="NLj-iO-M8v" eventType="valueChanged" id="ojl-w5-aud"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yıllık tekrar etsin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-zU-lz1">
                                 <rect key="frame" x="20" y="587" width="277" height="31"/>
@@ -221,18 +213,32 @@
                                     <action selector="yellowbutton:" destination="NLj-iO-M8v" eventType="touchUpInside" id="01G-Oa-kLj"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tarih" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-Kr-th2">
+                                <rect key="frame" x="100" y="431" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CXk-7a-cl9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0SV-Kr-th2" firstAttribute="centerY" secondItem="oSA-hp-CUH" secondAttribute="centerY" id="ALQ-ej-HxH"/>
+                            <constraint firstItem="0SV-Kr-th2" firstAttribute="leading" secondItem="CXk-7a-cl9" secondAttribute="leading" constant="100" id="IEs-n7-FOc"/>
+                            <constraint firstItem="0SV-Kr-th2" firstAttribute="centerX" secondItem="oSA-hp-CUH" secondAttribute="centerX" id="eTR-4Q-bMf"/>
+                            <constraint firstItem="CXk-7a-cl9" firstAttribute="trailing" secondItem="0SV-Kr-th2" secondAttribute="trailing" constant="100" id="xt1-W7-CNf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WRc-9j-NfC"/>
                     <connections>
+                        <outlet property="bildirimsw" destination="eUn-E3-AoX" id="TUM-HA-for"/>
                         <outlet property="bilgi2" destination="Wmo-zU-lz1" id="yu1-el-zDw"/>
                         <outlet property="bilgi3" destination="hph-nI-ck9" id="QSJ-hz-LhL"/>
                         <outlet property="bilgigirtf" destination="0XW-5s-FfD" id="YVd-d6-tGC"/>
                         <outlet property="bilgilbl" destination="YN6-mE-EhB" id="FeZ-Hi-xh7"/>
                         <outlet property="resimekle" destination="sn5-qQ-ULu" id="o1c-sO-gga"/>
-                        <outlet property="tarih" destination="Y93-aP-ui5" id="Ld5-pc-TCE"/>
+                        <outlet property="tarihtf" destination="0SV-Kr-th2" id="yE1-56-4jp"/>
+                        <outlet property="tekrarsw" destination="0Ka-UF-OPw" id="LdL-YI-2kc"/>
+                        <outlet property="ww" destination="0Ka-UF-OPw" id="s0Y-2v-EGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUm-lJ-JCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,6 +264,20 @@
             <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7ZE-gX-qqQ">
+            <size key="intrinsicContentSize" width="52" height="25.5"/>
+        </designable>
+        <designable name="KM9-cf-UVh">
+            <size key="intrinsicContentSize" width="46.5" height="27"/>
+        </designable>
+        <designable name="Nqp-2V-bIC">
+            <size key="intrinsicContentSize" width="53" height="25.5"/>
+        </designable>
+        <designable name="pvv-GD-IaN">
+            <size key="intrinsicContentSize" width="44.5" height="27"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
